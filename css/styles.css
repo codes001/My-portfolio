@@ -52,22 +52,7 @@ section {
 .btn:hover {
     background-color: #104152;
 }
-
-/* .flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-row {
-    display: flex;
-    flex-direction: row;
-} */
-
 /* End of global styles */
-
-
 
 /* Header styles */
 header {
