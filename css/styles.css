@@ -53,7 +53,7 @@ section {
     background-color: #104152;
 }
 
-.flex {
+/* .flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +63,7 @@ section {
 .flex-row {
     display: flex;
     flex-direction: row;
-}
+} */
 
 /* End of global styles */
 
@@ -171,21 +171,29 @@ header .logo {
 /* Skills styles */
 .skills {
     text-align: center;
+    width: 100%;
+    margin:0 auto;
 }
 
 .skills h1 {
     margin-bottom: 15px;
-    ;
     text-transform: uppercase;
 }
 
 .skills ul div {
+    display: inline-block;
     margin: 20px 25px 0;
-    text-align: left;
+    width: 400px;
+    text-align: center;
+    border: 1px solid #104152;
+    border-radius: 4px;
 }
 
 .skills ul li {
+    text-align: justify;
+
     margin: 25px;
+    font-size: 25px;
 }
 
 .fa-arrow-right, .fa-envelope {
@@ -195,9 +203,19 @@ header .logo {
 /* Form */
 form {
     padding: 40px 20px;
-    width: 600px;
+    width: 100%;
 }
-
+.contact {
+    display: block;
+    width: 60%;
+    margin: 80px auto !important;
+    border: 1px solid #104152;
+    
+}
+.contact h1{
+    text-align: center; 
+    padding-top: 20px;  
+}
 input,
 textarea {
     border: 0;
