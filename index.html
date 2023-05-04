@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Link -->
     <link rel="stylesheet" href="css/styles.css">
     <title>Prince Portfolio</title>
 </head>
 <body>
     <!-- Header Markup -->
     <header>
-        <div class="logo"><a href="">Prince Effiong</a></div>
+        <div class="logo"><a href="#home">Prince Effiong</a></div>
         <nav class="nav-links">
             <ul>
                 <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
                 <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
                 <li><a href="#skills"><i class="fas fa-pen"></i> Skills</a></li>
+                <li><a href="#gallery"><i class="fas fa-book"></i> Gallery</a></li>
                 <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
             </ul>
         </nav>
@@ -29,9 +32,10 @@
             <h1>Hi, I'm <span>Prince Effiong</span></h1>
             <h2>Software developer</h2>
             <div class="hero-socials">
-                <a href="https://github.com/codes001"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/codes001" class=""><i class="fab fa-github"></i></a>
                 <a href="https://instagram.com/effiong_prince_"><i class="fab fa-instagram"></i></a>
                 <a href="https://twitter.com/_effiong_prince"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/prince-effiong"><i class="fab fa-linkedin"></i></a>
                
             </div>
             <button class="btn">
@@ -41,7 +45,7 @@
     </div>
 
     <!-- ABout Section -->
-    <section class="about-me flex" id="about">
+    <section class="about-me flex-column" id="about">
         <h1>ABOUT ME</h1>
         <p>
             Hi there, I am Prince Effiong, and I am an aspiring software developer .
@@ -55,19 +59,35 @@
     </section>
 
     <!-- SKills section -->
-    <section class="skills flex" id="skills">
+    <section class="skills flex-column" id="skills">
         <h1>Here are my skills </h1>
-        <ul class="flex-row">
+        <ul class="flex-column">
             <div>
                 <li><i class="fas fa-check-circle"></i> HTML</li>
-            <li><i class="fas fa-check-circle"></i> CSS</li>
+            </div>
+            <div>
+                <li><i class="fas fa-check-circle"></i> CSS</li>
+            </div>
+            <div>
+                <li><i class="fas fa-check-circle"></i> DATA ANALYTICS</li>
             </div>
             <div>
                 <li><i class="fas fa-check-circle"></i> GIT</li>
-                <li><i class="fas fa-check-circle"></i> DATA ANALYTICS</li>
             </div>
         </ul>
     </section>
+
+    <!-- Gallery -->
+    <div class="gallery flex-column" id="gallery">
+        <h1>Gallery</h1>
+        <div class="gallery-img flex">
+            <img src="./img/dp (2).png" alt="">
+            <img src="./img/img1.jpg" alt="">
+            <img src="./img/img2.jpg" alt="">
+            <img src="./img/img3.jpg" alt="">
+         
+        </div>
+    </div>
 
     <!-- Contact section -->
     <section class="contact" id="contact">
@@ -87,13 +107,15 @@
 
                </textarea>
             </div>
-            <button class="btn">Submit</button>
+            <button class="btn flex"><i class="fas fa-paper-plane"></i> SEND MESSAGE</button>
         </form>
     </section>
     <div class="hero-socials center">
         <a href="https://github.com/codes001"><i class="fab fa-github"></i></a>
         <a href="https://instagram.com/effiong_prince_"><i class="fab fa-instagram"></i></a>
         <a href="https://twitter.com/_effiong_prince"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/in/prince-effiong"><i class="fab fa-linkedin"></i></a>
+
        
     </div>
     <footer>

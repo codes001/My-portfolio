@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Nunito+Sans:wght@300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
 
 
@@ -15,11 +15,15 @@ html {
 }
 
 body {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     background-color: #01233d;
     color: #fff;
+    overflow-x:hidden;
 }
-
+h1,h2,h3,h4, nav ul li, .btn{
+    font-family: 'Merriweather', serif;
+    font-weight:900;
+}
 ul {
     list-style: none;
 }
@@ -37,21 +41,53 @@ section {
     margin: 50px 0;
     padding: 20px;
 }
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
 
 .btn {
     padding: 15px;
     font-size: 16px;
     margin-top: 20px;
-    background-color: #01233d;
+    background-color: transparent;
     border: 0;
+    border:1px #fff solid;
     color: #fff;
     border-radius: 5px;
     font-family: inherit;
+    position: relative;
+    width:auto;
+    height:50px;
+    z-index: 1;
+    overflow:hidden;
+    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #104152;
+.btn::before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    background-color: #07345f;
+    border:none;
+    height:100%;
+    z-index: -1;
+    transition: 0.5s;
 }
+.btn:hover::before{
+    width:100%;
+    box-shadow: inherit;
+}
+
 /* End of global styles */
 
 /* Header styles */
@@ -60,9 +96,14 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 0 40px;
+    padding: 2% 40px;
     background-color: #01233d;
     color: #fff;
+    z-index: 10;
+    position:fixed;
+    top:0;
+    width:100%;
+   box-shadow:1px 1px 7px rgba(0,0,0,0.5);
 }
 
 header .nav-links ul {
@@ -70,11 +111,15 @@ header .nav-links ul {
 }
 
 header .nav-links ul li {
-    padding: 0.5rem;
+    padding: 0.8rem;
     margin: 0 0.6rem;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    border-radius:4px;
 }
-
+nav ul li:hover{
+    background:#ededed;
+    color:#01233d;
+}
 header .nav-links i,
 .btn i {
     margin-right: 10px;
@@ -97,12 +142,13 @@ header .logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 550px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
     text-align: center;
+    margin:65px 0;
 }
 
 .hero .hero-inner h1 {
@@ -116,8 +162,8 @@ header .logo {
 }
 
 .hero .hero-inner img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
 }
 
@@ -131,6 +177,7 @@ header .logo {
     border-radius: 50%;
     margin: 0 10px;
     font-size: 20px;
+    transition: .3s ease-in-out;
 }
 
 .hero-socials i:hover {
@@ -145,12 +192,13 @@ header .logo {
     line-height: 30px;
     letter-spacing: 0.8px;
     padding: 20px 50px;
-    /* width: 80%; */
     border-bottom:1px solid #104152;
 }
 
 .about-me h1 {
     margin-bottom: 20px;
+    text-align: center;
+
 }
 
 /* Skills styles */
@@ -166,25 +214,41 @@ header .logo {
 }
 
 .skills ul div {
-    display: inline-block;
-    margin: 20px 25px 0;
-    width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding:0 20px;
+    margin: 20px 20px 0;
+    width: auto;
     text-align: center;
-    border: 1px solid #104152;
+    box-shadow:inset 2px 3px 10px rgba(0,0,0,0.5);
     border-radius: 4px;
 }
-
 .skills ul li {
     text-align: justify;
-
     margin: 25px;
-    font-size: 25px;
+    font-size: 22px;
 }
 
-.fa-arrow-right, .fa-envelope {
+.fa-check-circle, .fa-envelope {
     margin-right: 20px;
 }
-
+/* Gallery */
+#gallery{
+    height:auto;
+margin-top:50px;
+}
+.gallery-img{
+    flex-wrap:wrap;
+    width:100%;
+    height:200px;
+    position: relative;
+    margin:50px 0;
+}
+.gallery-img img{
+    width:200px;
+    height:100%;
+}
 /* Form */
 form {
     padding: 40px 20px;
@@ -194,7 +258,8 @@ form {
     display: block;
     width: 60%;
     margin: 80px auto !important;
-    border: 1px solid #104152;
+    box-shadow:inset 1px 1px 7px rgba(0,0,0,0.5);
+border-radius:10px;
     
 }
 .contact h1{
@@ -204,7 +269,7 @@ form {
 input,
 textarea {
     border: 0;
-    border: 1px solid #104152;
+    box-shadow:inset 1px 1px 7px rgba(0,0,0,0.5);
     background: none;
     width: 100%;
     padding: 10px;
@@ -229,8 +294,10 @@ textarea:focus {
 }
 
 form .btn {
-    border: 1px solid #fff;
-    width:100%;
+    border:none;
+    padding:40px 20px;
+    box-shadow:inset 1px 1px 7px rgba(0,0,0,0.5);
+    width:auto;
 }
 .center{
     text-align:center;
@@ -241,4 +308,45 @@ form .btn {
 footer {
     text-align: center;
     padding-bottom: 20px;
+    margin-top:50px;
+}
+
+/* Media Queries */
+@media(max-width:900px){
+    nav ul {
+        background:#01233d;
+        flex-wrap:wrap;
+        position: fixed;
+        left:0;
+        top:60px;
+        padding:30px;
+    }
+    nav ul li{
+        margin:10px 0;
+    }
+    .about-me{padding:10px 15px;}
+}
+@media(max-width:768px){
+    form{ padding: 20px;
+}
+.hero {
+    margin-top:70%;
+}
+.hero .hero-inner h1 {
+    font-size: 30px;
+}
+
+.hero .hero-inner img {
+    width: 180px;
+    height: 180px;
+}
+.gallery{
+    margin-bottom:200px;
+}
+.gallery-img{ 
+    width:100%;
+    height:200px;
+}
+
+.contact{width:100%;padding: 20px;}
 }
